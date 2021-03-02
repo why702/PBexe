@@ -18,7 +18,7 @@
 #include <string>
 
 #include "fileio.h"
-#include "g5_match.h"
+//#include "g5_match.h"
 
 using namespace std;
 
@@ -56,7 +56,7 @@ int main(int argc, char **argv) {
       return -1;
     }
 
-    images_compare_(pimg0, pimg1, w, h);
+    //images_compare_(pimg0, pimg1, w, h);
     PLAT_FREE(pimg0);
     PLAT_FREE(pimg1);
   }

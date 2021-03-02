@@ -21,15 +21,9 @@
     <ClCompile Include="fileio.c">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="g5_match.c">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fileio.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="g5_match.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

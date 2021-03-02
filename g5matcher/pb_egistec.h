@@ -1,0 +1,102 @@
+/*
+ * Copyright (c) 2016, Precise Biometrics AB
+ * All rights reserved.
+ *
+ */
+
+#ifndef PB_EGISTEC_H
+#define PB_EGISTEC_H
+
+#include "pb_algorithmI.h"
+#include "pb_image_signal_processorI.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+/** Optical sensor */
+extern pbif_const pb_algorithmI egistec_200x200_cardo_2PX_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_2PA_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_2PB_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_2PA_NEW_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_3PX_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_3PC_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_3PD_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_3PDx_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CH1LA_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CH1LA_NEW_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CL1MH2_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CL1MH2V_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_CL1MH2_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_CL1MH2_INV_algorithm;
+extern pbif_const pb_algorithmI egistec_118x172_cardo_CL1WING_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_CL1WING_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_CL1WING_Latency_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_S2PA4_algorithm;
+extern pbif_const pb_algorithmI egistec_193x193_cardo_3PA_algorithm;
+extern pbif_const pb_algorithmI egistec_193x193_cardo_3PF_algorithm;
+extern pbif_const pb_algorithmI egistec_193x193_cardo_CL1TIME_algorithm;
+extern pbif_const pb_algorithmI egistec_193x193_cardo_S3PF5_algorithm;
+extern pbif_const pb_algorithmI egistec_193x193_cardo_S3PF2_algorithm;
+extern pbif_const pb_algorithmI egistec_193x193_cardo_S3PA2_algorithm;
+extern pbif_const pb_algorithmI egistec_193x193_cardo_S3PA2_Latency_algorithm;
+extern pbif_const pb_algorithmI egistec_193x193_cardo_CL1CAY_algorithm;
+extern pbif_const pb_algorithmI egistec_193x193_cardo_CL1CAY_pad_algorithm;
+extern pbif_const pb_algorithmI egistec_139x116_cardo_701_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_702_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_SXC210_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_702_NEW_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_702_INV_algorithm;
+extern pbif_const pb_algorithmI egistec_132x120_cardo_CH1M30_algorithm;
+extern pbif_const pb_algorithmI egistec_120x33_cardo_525_algorithm;
+extern pbif_const pb_algorithmI egistec_120x27_cardo_5XX_algorithm;
+extern pbif_const pb_algorithmI egistec_120x25_cardo_528_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_3PG_CH1JSC_H_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CO1D151_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CO1A118_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_3PG_CO1A118_algorithm;
+extern pbif_const pb_algorithmI egistec_139x116_cardo_701_NEW_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CS3ZE2_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_S3PG1_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_S3PG2_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_S3PG3_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_S3PG3_Latency_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_S3PG4_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_S3PG5_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_S3PG6_algorithm;
+extern pbif_const pb_algorithmI egistec_150x150_cardo_ET901_algorithm;
+extern pbif_const pb_algorithmI egistec_150x150_cardo_ET901_CL1V60_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_CH1M30_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_CH1M30_INV_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CH1E_SV_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CH1E_SB_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CH1J_SB_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CH1E_H_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CH1B_H_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_2PB_CH1M30_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CV1CPD1960_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_3PG_CV1CPD1960_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CL1MH2_CLT3_algorithm;
+extern pbif_const pb_algorithmI egistec_134x188_cardo_CL1MH2_C230_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_S2PB1_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CH1ABY_algorithm;
+extern pbif_const pb_algorithmI egistec_200x200_cardo_CV1CTD2041_algorithm;
+
+/** TFT Sensor **/
+extern pbif_const pb_algorithmI egistec_175x175_cardo_EF9002_algorithm;
+extern pbif_const pb_algorithmI egistec_175x175_cardo_EF9002_raw_algorithm;
+
+
+/** Image Signal Processor (ISP) for Egistec lens type sensor images. */
+#define EGISTEC_LENS_200x200_ISP_IMAGE_CAPTURE_IDENTIFIER  0 
+extern pbif_const pb_image_signal_processorI egistec_lens_200x200_isp;
+
+/** Image Signal Processor (ISP) for Egistec TFT type sensor images */
+#define EGISTEC_TFT_175x175_ISP_IMAGE_CAPTURE_IDENTIFIER 0
+extern pbif_const pb_image_signal_processorI egistec_TFT_175x175_isp;
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* PB_EGISTEC_H */
