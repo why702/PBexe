@@ -215,6 +215,9 @@ void images_compare_(unsigned char** raw1, unsigned char** raw2, int w, int h, i
                        &extract_finger_temp2_size);
 
     struct verify_init_v2 verify_init = {0};  // new
+    if (verify_init == NULL) {
+        return;
+    }
     verify_init.enroll_temp_array =
         (BYTE**)plat_alloc(nbr_of_fingers_to_enroll * sizeof(BYTE*));  // new
     verify_init.enroll_temp_size_array =

@@ -7,9 +7,6 @@
 |*  Copyright (C) 2007-2018 Egis Technology Inc.                              *|
 |*                                                                            *|
 \******************************************************************************/
-#include <stdio.h>
-#include <stdlib.h>
-
 #include <string>
 
 #include "../g5matcher/g5_match.h"
@@ -30,7 +27,7 @@ using namespace std;
 #endif
 
 int main(int argc, char** argv) {
-    if (argc == 2) {
+    if (argc == 3) {
         string sImg0 = *(argv + 1);
         string sImg1 = *(argv + 2);
 
@@ -53,8 +50,13 @@ int main(int argc, char** argv) {
 
         int match_score = 0, rot = 0, dx = 0, dy = 0;
         images_compare_(&pimg0, &pimg1, w, h, &match_score, &rot, &dx, &dy);
+		printf("match_score = %i, rot = %i, dx = %i, dy = %i, \n", match_score, rot, dx, dy);
         PLAT_FREE(pimg0);
         PLAT_FREE(pimg1);
     }
+	else
+	{
+		printf("argc = %i\n", argc);
+	}
     return 0;
 }
