@@ -3,6 +3,8 @@
 
 #include <string.h>
 
+#define _WINDOWS
+
 #if defined(TZ_MODE) && defined(__TRUSTONIC__)
 #define malloc malloc_NOT_SUPPORTED
 #define sprintf sprintf_NOT_SUPPORTED
