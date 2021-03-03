@@ -4,4 +4,8 @@
     <LocalDebuggerCommandArguments>D:\git\Dev2930_NP\image_bin\ghf015\0\enroll\st\016_1607999392525__picR=1_et=31.0_hc=3_M=395_Mc=634_MBc=643_McDP=-1_mica=153115_R1.png D:\git\Dev2930_NP\image_bin\ghf015\0\verify\st\006_1608000187669__picR=1_et=31.0_hc=3_M=392_Mc=609_MBc=651_McDP=-6_mica=153115_R1.png</LocalDebuggerCommandArguments>
     <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LocalDebuggerCommandArguments>D:\git\Dev2930_NP\image_bin\ghf015\0\enroll\st\016_1607999392525__picR=1_et=31.0_hc=3_M=395_Mc=634_MBc=643_McDP=-1_mica=153115_R1.png D:\git\Dev2930_NP\image_bin\ghf015\0\verify\st\006_1608000187669__picR=1_et=31.0_hc=3_M=392_Mc=609_MBc=651_McDP=-6_mica=153115_R1.png s</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
 </Project>

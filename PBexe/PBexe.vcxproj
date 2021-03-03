@@ -52,7 +52,14 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(SolutionDir)import\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)import\lib\x64_Release</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(SolutionDir)import\include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)import\lib\x64_Release;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -79,20 +86,50 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <Link>
-      <AdditionalDependencies>$(SolutionDir)Lib\x64\Debug\g5matcher.lib;BMF_pthread.lib;libwinpthread.lib;mingw-gcc.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>$(SolutionDir)Lib\x64\Debug\g5matcher.lib;BMF_pthread.lib;libwinpthread.lib;mingw-gcc.lib;opencv_core340.lib;opencv_highgui340.lib;opencv_imgcodecs340.lib;opencv_imgproc340.lib;opencv_photo340.lib;opencv_plot340.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalLibraryDirectories>$(SolutionDir)g5matcher\import\static-libs\x64\PB;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
     <ClCompile>
       <Optimization>Disabled</Optimization>
     </ClCompile>
+    <PreBuildEvent>
+      <Command>rd /s /Q $(ProjectDir)export\$(PlatformTarget)\$(Configuration)\exe</Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>md $(ProjectDir)export\$(PlatformTarget)\$(Configuration)\exe
+xcopy /Y $(TargetPath) $(ProjectDir)export\$(PlatformTarget)\$(Configuration)\exe
+xcopy /Y $(SolutionDir)import\bin\$(PlatformTarget)_$(Configuration)\*.dll $(ProjectDir)export\$(PlatformTarget)\$(Configuration)\exe
+xcopy /Y $(SolutionDir)doc\*.pdf $(ProjectDir)export\$(PlatformTarget)\$(Configuration)\exe
+xcopy /Y $(SolutionDir)import\bin\$(PlatformTarget)_$(Configuration)\*.dll $(SolutionDir)$(PlatformTarget)\$(Configuration)
+xcopy /Y $(SolutionDir)doc\*.pdf $(SolutionDir)$(PlatformTarget)\$(Configuration)</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Link>
+      <AdditionalDependencies>$(SolutionDir)Lib\x64\Debug\g5matcher.lib;BMF_pthread.lib;libwinpthread.lib;mingw-gcc.lib;opencv_core340.lib;opencv_highgui340.lib;opencv_imgcodecs340.lib;opencv_imgproc340.lib;opencv_photo340.lib;opencv_plot340.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)g5matcher\import\static-libs\x64\PB;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <PreBuildEvent>
+      <Command>
+      </Command>
+    </PreBuildEvent>
+    <PostBuildEvent>
+      <Command>xcopy /Y $(SolutionDir)import\bin\$(PlatformTarget)_$(Configuration)\*.dll  $(TargetDir)</Command>
+    </PostBuildEvent>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+    </ClCompile>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="fileio.c" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="merge_opencv.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fileio.h" />
+    <ClInclude Include="merge_opencv.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

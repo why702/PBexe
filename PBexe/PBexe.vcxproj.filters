@@ -21,9 +21,15 @@
     <ClCompile Include="fileio.c">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="merge_opencv.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="fileio.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="merge_opencv.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

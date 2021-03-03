@@ -215,14 +215,18 @@ void images_compare_(unsigned char** raw1, unsigned char** raw2, int w, int h, i
                        &extract_finger_temp2_size);
 
     struct verify_init_v2 verify_init = {0};  // new
-    if (verify_init == NULL) {
-        return;
-    }
     verify_init.enroll_temp_array =
         (BYTE**)plat_alloc(nbr_of_fingers_to_enroll * sizeof(BYTE*));  // new
+    if (verify_init.enroll_temp_array == NULL) {
+        return;
+    }
     verify_init.enroll_temp_size_array =
         (int*)plat_alloc(nbr_of_fingers_to_enroll * sizeof(int));  // new
-    verify_init.enroll_temp_number = nbr_of_fingers_to_enroll;     // new
+    if (verify_init.enroll_temp_size_array == NULL) {
+        PLAT_FREE(verify_init.enroll_temp_array);
+        return;
+    }
+    verify_init.enroll_temp_number = nbr_of_fingers_to_enroll;  // new
     verify_init.enroll_temp_array[0] = (BYTE*)plat_alloc(extract_finger_temp1_size * sizeof(BYTE));
     verify_init.enroll_temp_array[0] = extract_finger_temp1;
     verify_init.enroll_temp_size_array[0] = extract_finger_temp1_size;
